@@ -1,0 +1,50 @@
+<!DOCTYPE html system>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<title>Search</title>
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
+  <script type="text/javascript" src="js/FormManager.js"></script>
+  <script type="text/javascript" src="js/deps2.js"></script>
+</head>
+<body>
+  <!-- Search area -->
+<div id="searcharea" align="center">
+  <form id="search" action="">
+<input name="search_channels" type="text" id="search_channels" style="width:200px;" />
+<input type="button" style="height:25px;width:80px" value="Search" />
+<label>Basic<input name="searchtype" type="radio" value="b" checked /></label>
+<label>Advanced<input name="searchtype" type="radio" value="a" /></label>
+<br>
+<label><input name="media" type="radio" id="tv" class="DEPENDS ON searchtype BEING a" />TV</label>
+<label><input name="media" type="radio" id="radio" class="DEPENDS ON searchtype BEING a" />Radio</label>
+<label><input name="tagsearch" type="checkbox" id="tagsearch" class="DEPENDS ON searchtype BEING a" />
+Tags</label>
+<label><input name="descr" type="checkbox" id="descr" class="DEPENDS ON searchtype BEING a" />Description</label>
+<label><input name="both" type="checkbox" id="both" class="DEPENDS ON searchtype BEING a" />Both</label>
+</form>
+  
+  <!-- Channel area -->
+   <table align="center" cellpadding="5">
+    <tr><td></td><td align="center">FrogTV</td>
+    <td align="center">TorontoTV</td>
+    <td align="center">ParisHistoryTV</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td align="left"><img src="imgs/left.jpg" alt="previous" height="50" width="50"></td>
+    <td align="center"><img id="FrogTV" alt="FrogTV" src="imgs/azureus.png" height="100" width="100"></td>
+    <td align="center"><img id="TorontoTV" alt="TorontoTV" src="imgs/toronto.jpg" height="100" width="100">
+    </td>
+    <td align="center"><img id="ParisTV" alt="ParisTV" src="imgs/paris.jpg" height="100" width="100"></td>
+    <td align="right"><img src="imgs/right.jpg" alt="next" height="50" width="50"></td>
+    </tr>
+	<tr><td></td><td align="center">All about Frogs</td>
+    <td align="center">All about Toronto</td>
+    <td align="center">History of Paris</td><td></td>
+    </tr>
+    </table>
+    
+  </div>
+</body>
+</html>

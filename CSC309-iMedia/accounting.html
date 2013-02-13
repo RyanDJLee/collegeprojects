@@ -1,0 +1,26 @@
+<!DOCTYPE html system>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+  <title>iMedia - Discover your media</title>
+  <link rel="stylesheet" type="text/css" href="css/dhtmlx.css">
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
+  <script type="text/javascript" src="js/dhtmlx.js"></script>
+</head>
+
+<body>
+<div align="center">
+<b>Start Date: </b><input type="text" id="start" readonly >
+<b>End Date: </b><input type="text" id="end" readonly >
+<input type="button" value="Filter:"><input type="text"><br /></div>
+<div id="accounting" align="center"></div>
+<script type="text/javascript">
+	 var mCal1 = new dhtmlxCalendarObject("start",true);
+	 var mCal2 = new dhtmlxCalendarObject("end",true);
+	 var mygrid = new dhtmlXGridObject('accounting');
+	 mygrid.setImagePath("imgs/");
+	 mygrid.loadXML("xml/accounting.xml"); 
+</script>
+
+</body>
+</html>

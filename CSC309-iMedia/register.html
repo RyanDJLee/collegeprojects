@@ -1,0 +1,178 @@
+<!DOCTYPE html system>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>Register</title>
+    <script type="text/javascript" src="js/dhtmlx.js"></script> 
+	<script type="text/javascript" src="js/FormManager.js"></script>
+	<script type="text/javascript" src="js/deps.js"></script>
+	<script type="text/javascript" src="js/FormTracker.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/dhtmlx.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+</head>
+<body>
+
+<form name="register" method="post" action="">
+
+	<fieldset>
+	<legend>1) Login Information</legend>
+	<br />
+		Email*<input type="text" name="email" />
+		Username*<input type="text" name="username" /><br />
+		Password*<input type="password" name="password" />
+		Confirm Password*<input type="password" name="cpassword" />
+	<br />
+	</fieldset>
+	<br />
+	<fieldset>
+	<legend>2) Account Settings</legend>
+	<br />
+		Storage License*<select name="license">
+			<option value="256KB">256KB</option>
+			<option value="1MB">1 MB</option>
+			<option value="10MB">10 MB</option>
+			<option value="100MB">100 MB</option>
+			<option value="250MB">250 MB</option>
+			<option value="500MB">500 MB</option>
+			<option value="1GB">1 GB</option>
+			<option value="10GB">10 GB</option></select>
+		Language<select name="language">
+			<option value="English">English</option>
+			<option value="French">French</option>
+			<option value="Spanish">Spanish</option></select>
+	<br />
+	</fieldset>
+	<br />
+	<fieldset>
+	<legend>3) Payment Information</legend>
+	<p class="form_spacing">
+			Payment Options 
+			<label>CreditCard</label><input type="radio" name="paytype" value="cc" />
+			<label>PayPal<input type="radio" name="paytype" value="pp" /></label><br />
+		<label>Name on Credit Card*
+			<input type="text" name="ccname" class="DEPENDS ON paytype BEING cc" />
+		<br /></label>
+		<label>Credit Card Type*
+			<select name="cctype" class="DEPENDS ON paytype BEING cc">
+			<option value="Visa">Visa</option>
+			<option value="MasterCard">MasterCard</option>
+			<option value="American Express">American Express</option>
+			<option value="Discover">Discover</option></select>
+		<br /></label>
+		
+		<label>Credit Card Number*
+		<input type="text" name="ccnum" class="DEPENDS ON paytype BEING cc" />
+		<br /></label>
+		<label>Expiry Date*
+				
+			<select name="ccexpmo" class="DEPENDS ON paytype BEING cc">
+			<option value="01">01</option>
+			<option value="02">02</option>
+			<option value="03">03</option>
+			<option value="04">04</option>
+			<option value="05">05</option>
+			<option value="06">06</option>
+			<option value="07">07</option>
+			<option value="08">08</option>
+			<option value="09">09</option>
+			<option value="10">10</option>
+			<option value="11">11</option>
+			<option value="12">12</option></select>
+			<select name="ccexpyear" class="DEPENDS ON paytype BEING cc">
+			<option value="2009">2009</option>
+			<option value="2010">2010</option>
+			<option value="2011">2011</option>
+			<option value="2012">2012</option>
+			<option value="2013">2013</option>
+			<option value="2014">2014</option>
+			<option value="2015">2015</option></select>
+		</label>
+		<label>PayPal Email*
+			
+			<input type="text" name="ppid" class="DEPENDS ON paytype BEING pp" />
+		<br /></label>
+		<label>PayPal Password*
+			<input type="password" name="pppass" class="DEPENDS ON paytype BEING pp" />
+		</label>
+	</p>
+	</fieldset>
+	<br />
+	<fieldset>
+	<legend>4) Personal Information</legend>
+	<br />
+	First Name<input type="text" name="fname" />
+	Last Name<input type="text" name="lname" /><br />
+	Salutation:
+		<label>Mr.<input type="radio" name="sal" value="Mr." /></label>
+		<label>Ms.<input type="radio" name="sal" value="Ms." /></label>
+		<label>Mrs.<input type="radio" name="sal" value="Mrs." /></label>
+		<label>Dr.<input type="radio" name="sal" value="Dr." /></label>
+		<br />
+	Gender:
+		<label>Male<input type="radio" name="sex" value="Male" /></label>
+		<label>Female<input type="radio" name="sex" value="Female" /></label>
+		<br />
+	Birth date (dd/mm/yyyy):<select name="bday">
+			<option value="01">01</option>
+			<option value="02">02</option>
+			<option value="03">03</option>
+			<option value="04">04</option>
+			<option value="05">05</option>
+			<option value="06">06</option>
+			<option value="07">07</option>
+			<option value="08">08</option>
+			<option value="09">09</option>
+			<option value="10">10</option>
+			<option value="11">11</option>
+			<option value="12">12</option>
+			<option value="13">13</option>
+			<option value="14">14</option>
+			<option value="15">15</option>
+			<option value="16">16</option>
+			<option value="17">17</option>
+			<option value="18">18</option>
+			<option value="19">19</option>
+			<option value="20">20</option>
+			<option value="21">21</option>
+			<option value="22">22</option>
+			<option value="23">23</option>
+			<option value="24">24</option>
+			<option value="25">25</option>
+			<option value="26">26</option>
+			<option value="27">27</option>
+			<option value="28">28</option>
+			<option value="29">29</option>
+			<option value="30">30</option>
+			<option value="31">31</option>
+			</select>
+
+			<select name="bmo">
+			<option value="01">01</option>
+			<option value="02">02</option>
+			<option value="03">03</option>
+			<option value="04">04</option>
+			<option value="05">05</option>
+			<option value="06">06</option>
+			<option value="07">07</option>
+			<option value="08">08</option>
+			<option value="09">09</option>
+			<option value="10">10</option>
+			<option value="11">11</option>
+			<option value="12">12</option></select>
+			<input type="text" size="4" maxlength="4"><br />
+	Street<input type="text" name="street" />
+	City<input type="text" name="city" /><br />
+	State/Province<input type="text" name="state" maxlength="2" size="2" />
+	Postal/Zip Code<input type="text" name="pcode" maxlength="6" /><br />
+	Country<input type="text" name="country" />
+	<br />
+	</fieldset>
+	<fieldset>
+		<legend>Registration Confirmation</legend>
+	<textarea name="status" rows="10" cols="50"  >
+	</textarea><br />
+	<input type="button" value="Submit Registration" onClick="validate(this.form);"/>
+    <input type="reset" value="Reset Form" />
+
+</fieldset>
+</form>

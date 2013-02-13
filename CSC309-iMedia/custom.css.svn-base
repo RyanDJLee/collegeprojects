@@ -1,0 +1,15 @@
+ 
+#content {
+width:800px;
+height:600px;
+position:relative;
+}
+
+#gridbox {
+height:563px;
+}
+
+#a_tabbar {
+width:370px;
+height:250px;
+}

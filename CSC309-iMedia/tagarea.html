@@ -1,0 +1,42 @@
+<!DOCTYPE html system>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <title>iMedia - Discover your media</title>
+  <link rel="stylesheet" type="text/css" href="css/dhtmlx.css">
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
+  <script type="text/javascript" src="js/dhtmlx.js"></script>
+ 
+</head>
+
+<body>
+
+<div id="contenttabbar"></div>
+<center>
+<object width="240" height="196" 
+  classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" 
+  codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+  <param name="src" value="video/penguin-trip.wmv">
+  <param name="controller" value="true">
+  <param name="autoplay" value="true">
+  <!-- using this tag will cause invalid html -->
+  <!-- <embed src="video/penguin-trip.wmv" width="240" height="196"  
+    autoplay="true" controller="true" 
+    pluginspage="http://www.apple.com/quicktime/download/">
+  </embed> -->
+</object><br /></center>
+<div id="gridbox"></div>
+
+<script type="text/javascript">
+var mygrid = new dhtmlXGridObject('gridbox');
+mygrid.setImagePath("imgs/");
+mygrid.loadXML("xml/top20.xml"); 
+var tabbar = new dhtmlXTabBar("contenttabbar");
+tabbar.setImagePath("imgs/");
+tabbar.addTab("a1","Hot 20 Tags", "150px");
+tabbar.setContent("a1","gridbox");
+
+</script>
+
+</body>
+</html>

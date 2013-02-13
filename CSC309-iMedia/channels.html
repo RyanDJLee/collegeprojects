@@ -1,0 +1,26 @@
+<!DOCTYPE html system>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <title>iMedia - Discover your media</title>
+  <link rel="stylesheet" type="text/css" href="css/dhtmlx.css">
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
+  <script type="text/javascript" src="js/dhtmlx.js"></script>
+    <script type="text/javascript" src="js/homehead.js"></script>
+</head>
+
+<body>
+<div id="channels"></div>
+ 
+<script type="text/javascript">
+	/* init channel page */
+	var Layout1 = new dhtmlXLayoutObject("channels","2U");
+    Layout1.cells("a").setText("Search for Channels");
+	Layout1.cells("a").attachURL("search.html");
+    Layout1.cells("a").setWidth("40%");
+	Layout1.cells("b").attachURL("schedule.html");
+    Layout1.cells("b").setText("Watch Channels");
+</script>
+
+</body>
+</html>

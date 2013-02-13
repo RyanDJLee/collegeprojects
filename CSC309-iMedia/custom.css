@@ -1,0 +1,32 @@
+p.form_spacing {
+  line-height: 165%;
+}
+ 
+#content,#channels,#contenttabbar,#tags,#tabbar,#prod,#mycontent,#subs,#prog {
+width:100%;
+height:100%;
+position:relative;
+}
+
+#searcharea,#login,#tagresults {
+background-color:#f0f5fb;
+}
+
+#gridbox,#gridbox2,#gridbox3,#productionbox,#accounting {
+height:100%;
+background-color:#f0f5fb;
+}
+
+body {
+background-color:#f0f5fb;
+}
+
+h3 {
+color:blue;
+size:40;
+}
+
+img.thumb {
+height:100px;
+width:100px;
+}

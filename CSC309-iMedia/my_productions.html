@@ -1,0 +1,59 @@
+<!DOCTYPE html system>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+  <title>iMedia - Discover your media</title>
+  <link rel="stylesheet" type="text/css" href="css/dhtmlx.css" >
+  <link rel="stylesheet" type="text/css" href="css/custom.css" >
+  <script type="text/javascript" src="js/dhtmlx.js"></script>
+</head>
+
+<body>
+<div id="prod"></div>
+
+<!-- top area -->
+<div id="main">
+<input type="button" value="Add Channel">
+<input type="button" value="Edit Channel">
+<input type="button" value="Delete Channel">
+<input type="button" value="Add New Day">   
+<div id="productionbox"></div>
+</div>
+
+<!-- lower left area -->
+<div id="contenttabbar"></div>
+<div id="gridbox"></div>
+<div id="gridbox2"></div>
+
+<script type="text/javascript">
+var Layout2 = new dhtmlXLayoutObject("prod","3T");
+Layout2.cells("a").attachObject("main");
+Layout2.cells("a").setHeight("25%");
+Layout2.cells("a").setText("My Productions");
+Layout2.cells("b").hideHeader();
+Layout2.cells("c").hideHeader();
+Layout2.cells("b").setText("Add Program");
+Layout2.cells("b").attachObject("contenttabbar");
+Layout2.cells("c").attachURL("program.html");
+Layout2.cells("c").setText("Program Information");
+
+var mygrid1 = new dhtmlXGridObject('gridbox');
+mygrid1.setImagePath("imgs/");
+mygrid1.loadXML("xml/mycontent.xml"); 
+var mygrid2 = new dhtmlXGridObject('gridbox2');
+mygrid2.setImagePath("imgs/");
+mygrid2.loadXML("xml/liccontent.xml"); 
+var tabbar = new dhtmlXTabBar("contenttabbar");
+tabbar.setImagePath("imgs/");
+tabbar.addTab("a1","My Content", "150px");
+tabbar.addTab("a2","Licensed Content", "150px");
+tabbar.setContent("a1","gridbox");
+tabbar.setContent("a2","gridbox2");
+var mygrid3 = new dhtmlXGridObject('productionbox');
+mygrid3.setImagePath("imgs/");
+mygrid3.loadXML("xml/productions.xml");
+	 
+</script>
+
+</body>
+</html>

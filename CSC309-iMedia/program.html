@@ -1,0 +1,44 @@
+<!DOCTYPE html system>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+  <title>iMedia - Discover your media</title>
+  <link rel="stylesheet" type="text/css" href="css/dhtmlx.css">
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
+  <script type="text/javascript" src="js/dhtmlx.js"></script>
+</head>
+
+<body>
+
+<input type="button" value="New Program">
+<input type="button" value="Delete Selected">
+<input type="button" value="Edit Selected"> <br />
+<b>Schedule Date: </b><input type="text" id="calendar" readonly >
+<div id="gridbox3" align="center"></div>
+<center>
+<object width="240" height="196" 
+  classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" 
+  codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+  <param name="src" value="video/penguin-trip.wmv">
+  <param name="controller" value="true">
+  <param name="autoplay" value="true">
+  <!-- using this tag will cause invalid html -->
+  <!-- <embed src="video/penguin-trip.wmv" width="240" height="196"  
+    autoplay="true" controller="true" 
+    pluginspage="http://www.apple.com/quicktime/download/">
+  </embed> -->
+</object><br />
+<input type="submit" value="Done">
+</center>
+
+<script type="text/javascript">
+	
+var mCal = new dhtmlxCalendarObject("calendar",true);
+var mygrid = new dhtmlXGridObject('gridbox3');
+mygrid.setImagePath("imgs/");
+mygrid.loadXML("xml/proginfo.xml"); 
+
+</script>
+
+</body>
+</html>

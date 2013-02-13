@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+    <head>
+	    <column width="100" type="ed" align="right" color="#f0f5fb" sort="str">Channel</column>
+        <column width="75" type="co" align="right" color="#f0f5fb" sort="str">Revenues</column>
+        <column width="75" type="co" align="center" color="#f0f5fb" sort="str">Expenses</column>
+     <column width="75" type="co" align="center" color="#f0f5fb" sort="str">Net Income</column>
+	  
+    </head>
+ 	<row id="1">
+	<cell>FrogTV</cell>
+		<cell>$55.00</cell>
+		<cell>$0.00</cell>
+		<cell>$55.00</cell>
+	</row>
+ 	<row id="2">
+	<cell>TorontoTV</cell>
+		<cell>$0.00</cell>
+		<cell>$25.00</cell>
+		<cell>$-25.00</cell>
+	</row>
+	 	<row id="3">
+	<cell>ParisTV</cell>
+		<cell>$0.00</cell>
+		<cell>$15.00</cell>
+		<cell>$-15.00</cell>
+	</row>
+	 	<row id="4">
+	<cell>Total</cell>
+		<cell>$55.00</cell>
+		<cell>$40.00</cell>
+		<cell>$15.00</cell>
+	</row>
+	
+</rows>

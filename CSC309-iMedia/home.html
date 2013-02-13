@@ -1,0 +1,57 @@
+<!DOCTYPE html system>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+  <title>iMedia - Discover your media</title>
+  <link rel="stylesheet" type="text/css" href="css/dhtmlx.css" >
+  <link rel="stylesheet" type="text/css" href="css/custom.css" >
+  <script type="text/javascript" src="js/dhtmlx.js"></script>
+  <script type="text/javascript" src="js/homehead.js"></script>
+</head>
+
+<body>
+ 
+<!-- Home screen -->
+<div id="home" style="width:100%;height:100%"></div> 
+<div id="splash" style="width:100%;height:100%">
+<img src="imgs/imedia.jpg" alt="Imedia - Discover your media">
+</div> 
+
+ <!-- Login -->
+  <div id="login">
+    <form id="formlogin" action="">
+  <table width="100%" border="0" cellspacing="0" cellpadding="5">
+<tr>	
+<td width="138" bgColor="#e4eef8" style="border-top: solid 1px #000000; font-size:11px; font-weight:bold;">Enter Your Username</td>
+<td width="188" bgColor="#e4eef8" style="border-top: solid 1px #000000;">
+<input name="txtUsername" type="text" id="txtUsername" style="width:110px;" /></td>
+<td width="308" bgColor="#e4eef8" style="border-top: solid 1px #000000;font-size:11px;">Not a member? <input type="button" onClick="createRegister();" style="height:25px;width:70px" value="Click here"></td></tr>
+<tr><td bgColor="#f0f5fb" style="border-top: solid 1px #000000;font-size:11px; font-weight:bold;">Enter Your Password</td><td bgColor="#f0f5fb" style="border-top: solid 1px #000000;"><input name="txtPassword" type="password" id="txtPassword" style="width:110px;" /></td>
+<td bgColor="#f0f5fb" style="border-top: solid 1px #000000;font-size:11px;">Forget your password? <input type="button" onClick="createPassword();" style="height:25px;width:70px" value="Click here">
+											</td>
+										</tr>
+										<tr>
+											<td>&nbsp;</td>
+											<td colspan="2" style="font-size:11px;"><input id="chkRmbrMe" type="checkbox" name="chkRmbrMe" checked="checked" tabindex="3" /><label for="chkRmbrMe">Remember my login information</label></td>
+
+										</tr>
+										<tr>
+											<td>&nbsp;</td>
+											<td><input type="button" name="btnLogin" value="Sign In" id="btnLogin" tabindex="4" style="FONT-WEIGHT:bold; FONT-SIZE:11px; height:25px; width:95px;" /></td>
+											<td>&nbsp;</td>
+										</tr>
+									</table></form>
+  </div> 
+ 
+<script type="text/javascript">
+	/* init home page */	
+	var Layout = new dhtmlXLayoutObject("home","2U","dhx_blue");
+	Layout.cells("a").setText("Begin creating your media today!");
+	Layout.cells("a").attachObject("splash");
+	Layout.cells("b").setWidth("30%");
+	Layout.cells("b").attachObject("login");
+	Layout.cells("b").setText("Login/Register");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html system>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+    <title>Renew Subscription to Channel</title>
+    <link rel="stylesheet" type="text/css" href="css/dhtmlx.css">
+    <script type="text/javascript" src="js/dhtmlx.js"></script> 
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+  </head>
+  <body>
+    <h3>Renew Subscription to Channel</h3>
+    <form name="renew" method="post" action="">
+      <table border="0"><tr><td>
+       Station Name: <div id="station_name" /><br><br></div>
+	 Description: <div id="station_desc" /><br><br></div>
+	 Subscription Period: <select name="sub_per">
+        <option value="day">1 Day $1.00</option>
+        <option value="week">1 Week $4.00</option>
+        <option value="month">1 Month $12.00</option>
+        <option value="year">1 Year $30.00</option>
+      </select><br><br></td>
+	<td valign="top"><img alt="" src="imgs/azureus.png" class="thumb" /></td></tr>
+	</table>
+	<table border="0" width="600">
+	<tr align="center">
+	  <td><input type="checkbox" name="agree" />I agree to charge my account for the amount selected<br><br></td></tr>
+	<tr align="center"><td><input type="reset" value="Cancel" />
+    <input type="submit" value="Renew" /></td></tr>
+	</table>
+    </form>
+  </body>
+</html>

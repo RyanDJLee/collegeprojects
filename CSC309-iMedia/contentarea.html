@@ -1,0 +1,57 @@
+<!DOCTYPE html system>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <title>iMedia - Discover your media</title>
+  <link rel="stylesheet" type="text/css" href="css/dhtmlx.css">
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
+  <script type="text/javascript" src="js/dhtmlx.js"></script>
+ 
+</head>
+
+<body>
+
+<input type="button" value="Add Content">
+<input type="button" value="Delete Selected">
+<input type="button" value="Edit Selected">
+<div id="contenttabbar"></div>
+<div id="gridbox" align="center"></div>
+<div id="gridbox2" align="center"></div>
+<center>
+<object width="240" height="196" 
+  classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" 
+  codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+  <param name="src" value="video/penguin-trip.wmv">
+  <param name="controller" value="true">
+  <param name="autoplay" value="true">
+  <!-- using this tag will cause invalid html -->
+  <!-- <embed src="video/penguin-trip.wmv" width="240" height="196"  
+    autoplay="true" controller="true" 
+    pluginspage="http://www.apple.com/quicktime/download/">
+  </embed> -->
+</object><br />
+</center>
+<div id="license" align="center">
+<form id="lic" action="license_content.html">
+<input type="submit" value="License Content"></form>
+</div>
+
+<script type="text/javascript">
+ var mygrid1 = new dhtmlXGridObject('gridbox');
+ mygrid1.setImagePath("imgs/");
+ mygrid1.loadXML("xml/mycontent.xml"); 
+ var mygrid2 = new dhtmlXGridObject('gridbox2');
+ mygrid2.setImagePath("imgs/");
+ mygrid2.loadXML("xml/liccontent.xml"); 
+var tabbar = new dhtmlXTabBar("contenttabbar");
+tabbar.setImagePath("imgs/");
+tabbar.setHrefMode("ajax-html"); 
+tabbar.addTab("a1","My Content", "150px");
+tabbar.addTab("a2","Licensed Content", "150px");
+tabbar.setContent("a1","gridbox");
+tabbar.setContent("a2","gridbox2");
+
+</script>
+
+</body>
+</html>
