@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Family Tree viewer 1.0 BETA</title>
+		<link rel="stylesheet" href="lib/custom.css" />
+		<script language="JavaScript" type="text/javascript" src="lib/cake.js"></script>
+		<script language="JavaScript" type="text/javascript" src="lib/familyTree.js"></script>
+		<script language="JavaScript" type="text/javascript" src="lib/customCake.js"></script>
+		<script language="JavaScript" type="text/javascript" src="lib/layoutManager.js"></script>
+		<script language="JavaScript" type="text/javascript" src="fakedata.js"></script>
+        	<script language="javascript" type="text/javascript" src="lib/jquery.js"></script>
+		<script language="JavaScript" type="text/javascript" src="lib/main.js"></script>
+	</head>
+	<body onLoad="init();"> 
+    <div class="box">
+			<div class="boxtop">
+			</div>
+			<div class="content">
+				<div class="header">
+				</div>
+				<div class="main">
+
+		<!-- outer table -->
+		<table align="center">
+		
+
+		<!-- table with info and canvas -->
+		<table><tr><td>
+		<!-- canvas table -->
+		<tr><td><canvas id="myCanvas" width="785" height="340"></canvas></td></tr>
+
+					<table>
+						<tr>
+						<td style="vertical-align: middle;">
+						Search for a family member: <br />
+						<input id="searchbox" autocomplete="off" type="text">
+						<input type="button" name="searchbutton" value="Search" onclick="search2();" ></td>
+						
+						<td><span></span></td>
+						<td style="vertical-align: middle;">
+						Select a family tree: <br />
+						<form align="center" name = "testsel">
+							<select id="select1" name="select1" onChange="showTest()">
+								<option value="option 0">Build a Family Tree</option>
+								<option value="option 1">Simplest Sample Tree</option>
+								<option value="option 2">Nuclear Sample Tree</option>
+								<option value="option 3">3 Generation Sample Tree</option>
+								<option value="option 4">Boinga Sample Tree</option>
+								<option value="option 5">Pablo Sample Tree</option>
+								<option value="option 6">Tasha Sample Tree</option>
+								<option value="option 7">Uniqua Sample Tree</option>
+								<option value="option 8">Tyrone Sample Tree</option>
+								<option value="option 9">Austin Sample Tree</option>
+							</select>
+						</form></td>
+						
+						<td><span></span></td>
+						<td><img align="center" src="lib/zoomin.jpg" height=50 width=50 alt="zoom in" onClick="zoom2(-ZOOM_BUTTONFACTOR);" />Zoom In
+						<img align="center" src="lib/zoomout.jpg" height=50 width=50 alt="zoom out" onClick="zoom2(ZOOM_BUTTONFACTOR);" />Zoom Out</td></tr>
+						
+						
+							
+						
+					</table>
+					
+		</td></tr></table>
+	      
+
+	  </table> 
+				<table>
+					<tr><td>
+					
+					<table border="0" style="border-width: 1px; border-color:#d2e9ff; border-style: solid;">
+						
+						<td><h2>Information:</h2></td>
+						
+						<tr><td>First name: <br /><input type="text" id="first" autocomplete="off"></input></td></tr>
+						<tr><td>Last name: <br /><input type="text" id="last" autocomplete="off"></input></td></tr>
+						<tr><td>Date of birth: <br /><input type="text" id="dob" autocomplete="off"></input></td></tr>
+                       				<tr><td>Date of death: <br /><input type="text" id="dod" autocomplete="off"></input></td></tr>
+						<tr><td>Notes: <br /><input type="textbox" id="notes" autocomplete="off"></input></td></tr>
+						<tr><td><input type="button" id="modify" value="Edit Info" onclick="modify();"></input></td></tr>
+						<tr /><tr /><tr /><tr /><tr /><tr /><tr /><tr /><tr /><tr /><tr /><tr /><tr /><tr /><tr /><tr /><tr /><tr /><tr />
+					</table>
+					</td>
+					
+					<td><table border="0" style="border-width: 1px; border-color:#d2e9ff; border-style: solid;">
+					
+							<tr><td><h2>Photo:</h2></td></tr>
+							<tr><td>Photo: <br /><input id="upload" type="file" size="18"></input></td></tr>
+							<tr><td><input type="button" value="Upload" onclick="preview();"></input></td></tr>
+							<tr><td><img id="photo" src="lib/noimage.gif" height="200" width="200" /></td></tr>
+							<tr /><tr /><tr /><tr /><tr /><tr /><tr /><tr /><tr /><tr /><tr /><tr /><tr /><tr /><tr /><tr /><tr /><tr /><tr /><tr /><tr />
+							
+					</table></td>
+					
+					
+					<td><table border="0" style="border-width: 1px; border-color:#d2e9ff; border-style: solid;">
+						<tr><td><h2>Add family member:</h2></td></tr>
+						<form name="nodeform" />
+						
+						<tr><td><table>
+						<tr><td>Enter first name: <br /><input type="text" id="nodefirstname" /></td></tr>
+						<tr><td>Enter last name: <br /><input type="text" id="nodelastname" /></td></tr>
+						<tr><td>Enter date of birth: <br /><input type="text" id="nodedob" /></td></tr>
+						<tr><td>Enter date of death: <br /><input type="text" id="nodedod" /></td></tr>
+						<tr><td>Enter notes: <br /><input type="text" id="nodenotes"/></td></tr>
+						<tr><td>Enter gender: <br />Male <input type="radio" name="nodegender" id="nodemale" checked />
+						Female <input type="radio" name="nodegender" id="nodefemale" /></td></tr>
+						<tr><td>Adopted? <input type="checkbox" id="nodeadopted" /></td></tr>
+						</table></td>
+						
+						<td><table>
+						
+						
+						<tr><td>Enter Father: <br /><input type="text" id="nodefather"/></td></tr>
+						<tr><td>Enter Mother: <br /><input type="text" id="nodemother"/></td></tr>
+						<tr><td>Enter Spouse: <br /><input type="text" id="nodespouse" /></td></tr>
+						<tr><td>Single? <input type="radio" name="add" id="nodesingle" checked /></td></tr> 
+						<tr><td>Married? <input type="radio" name="add" id="nodemarriage" /></td></tr>
+						<tr><td>Divorced? <input type="radio" name="add" id="nodedivorce" /></td></tr>
+						<tr><td>Common Law? <input type="radio" name="add" id="nodecommonlaw" /></td></tr>
+						<tr /><tr /><tr /><tr /><tr /><tr /><tr /><tr />
+						<tr><td><input type="button" value="Add node" onClick="addnode();"/></td></tr>
+						</form>
+						</table></td></tr>
+					</table></td></tr>
+                 </table>
+				<div class="clear"></div>
+				</div>
+				<div class="footer">Copyright by Team Pablo and University of Toronto<br /></div>
+
+			</div> 
+			<div class="boxbottom"></div>
+		</div> 
+    
+   
+	</body>
+</html>

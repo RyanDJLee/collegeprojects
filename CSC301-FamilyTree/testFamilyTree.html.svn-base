@@ -1,0 +1,74 @@
+<html>
+	<head>
+		<script language="JavaScript" src="../jsunit/app/jsUnitCore.js"></script>
+		<script language="JavaScript" src="../lib/familyTree.js"></script>
+		<script language="JavaScript" src="../fakedata.js"></script>
+	</head>
+	<body>
+		<script language="JavaScript">
+			function testCreateFamilyMember() {
+				var id = "joe";
+				var firstName = "Joe";
+				var lastName = "Sample";
+				var gender = MALE;
+				var dateOfBirth = "01-JAN-1901"; 
+				var dateOfDeath = "01-JAN-2001";
+				var notes = "Joe is our test family member.";
+				
+				var factory = new FamilyMemberFactoryImpl();
+				
+				var familyMember = factory.createFamilyMember(id, firstName, lastName, gender, dateOfBirth, dateOfDeath, notes);
+				
+				assertEquals("Id is " + id, id, familyMember.id );
+				assertEquals("First name is " + firstName, firstName, familyMember.firstName );
+				assertEquals("Last name is " + lastName, lastName, familyMember.lastName );
+				assertEquals("Gender is " + gender, gender, familyMember.gender );
+				assertEquals("Date of birth is " + dateOfBirth, dateOfBirth, familyMember.dateOfBirth );
+				assertEquals("Date of death is " + dateOfDeath, dateOfDeath, familyMember.dateOfDeath );
+				assertEquals("Notes are: " + notes, notes, familyMember.notes );
+			}
+			
+			function testFamilyTreeBuilder() {
+				// Construct a simple tree.
+				var treeBuilder = new FamilyTreeBuilder( new FamilyMemberFactoryImpl());
+				var simplestOfTrees = new SimplestOfTreesDirector( treeBuilder );
+				simplestOfTrees.construct();
+				var familyTree = treeBuilder.getResult();
+				
+				// Now verify that the builder did a good job.
+				// Pick "joe" as the root and traverse from there.
+				var joeId = "joe";
+				var joeFirstName = "Joe";
+				
+				var janeId = "jane";
+				var janeFirstName = "Jane";
+				
+				var joeJrId = "joejr";
+				var joeJrFirstName = "Joe Jr.";
+				
+				var jackyId = "jacky";
+				var jackyFirstName = "Jacky";
+				
+				var joe = familyTree.familyMembers[joeId];
+				
+				// Make sure we have Joe.
+				assertEquals("First name is " + joeFirstName, joeFirstName, joe.getFirstName());
+				
+				// Make sure that Joe is married to Jane. Note that first decorator is parent then spouse.
+				assertEquals("Joe is married to Jane.", janeId, joe.familyMember.marriages[0].wife.getId());
+				assertEquals("Joe is married to Jane.", janeFirstName, joe.familyMember.marriages[0].wife.getFirstName());
+				
+				// Make sure Joe Jr. and Jacky are children of Joe.
+				var joesKids = joe.children;
+				
+				// First kid is Joe Jr.
+				assertEquals("Joe Jr. is Joe's kid.", joeJrId, joesKids[0].getId());
+				
+				// Second kid is Jacky.
+				assertEquals("Jacky is Joe's kid.", jackyId, joesKids[1].getId());
+				
+				
+			}
+		</script>
+	</body>
+</html>

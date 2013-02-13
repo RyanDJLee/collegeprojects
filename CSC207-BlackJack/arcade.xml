@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<tournament>
+	<player>
+		<name>
+			Jim
+		</name>
+		<points>
+			68
+		</points>
+	</player>
+	<player>
+		<name>
+			Michelle
+		</name>
+		<points>
+			78
+		</points>
+	</player>
+	<player>
+		<name>
+			Tong
+		</name>
+		<points>
+			61
+		</points>
+	</player>
+	<game>
+		<name>
+			BlackJack
+		</name>
+		<module>
+			Blackjack
+		</module>
+		<class>
+			BlackJack
+		</class>
+		<path>
+			
+		</path>
+	</game>
+</tournament>
